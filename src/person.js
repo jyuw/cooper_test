@@ -3,6 +3,6 @@ function Person(attr) {
   this.age = attr.age;
 }
 
-Person.prototype.calculateCooperValue = function(distance) {
-  calculateCooper(this, distance);
+Person.prototype.calculateCooper = function(distance) {
+  cooperResult(this, distance);
 };
