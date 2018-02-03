@@ -1,21 +1,14 @@
 describe("Cooper", function() {
-  var cooper;
   var person;
-  var distance;
 
   beforeEach(function() {
-    person = new Person({age: 20, gender: 'male', distance: 2300});
-    cooper = new Cooper();
+    person = new Person({age: 20, gender: 'male'});
   });
 
-  it("makes sure cooper is not nil", function() {
-    expect(cooper).not.toBe(null);
-  });
-
-  it("returns the correct value", function()
-    person.distance = 2300;
-    cooper.calculateCooper(person);
+  it("returns the correct value", function(){
+    person.calculateCooperValue(2300);
     expect(person.cooperMessage).toEqual('Average');
+  });
 });
 
 

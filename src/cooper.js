@@ -1,256 +1,245 @@
-function Cooper(){
-}
-
-Cooper.prototype.calculateCooper = function(obj) {
-  var distance = obj.distance;
-  var cooperFormula = (distance - 504.9) / 44.73;
-  var age = obj.age;
-  var gender = obj.gender;
-  obj.cooperValue =  parseFloat(cooperFormula.toFixed(2));
-  setCooperResult(obj);
-};
-
-function setCooperResult (obj){
+function calculateCooper (obj, distance){
   if(obj.gender === 'male'){
     if(obj.age === 13 || obj.age === 14){
-      if (obj.cooperValue < 2100) {
+      if (distance < 2100) {
         obj.cooperMessage = "Poor";
       }
-      if (obj.cooperValue >= 2100 && obj.cooperValue < 2199) {
+      else if (distance >= 2100 && distance < 2199) {
         obj.cooperMessage = "Below Average";
       }
-      if (obj.cooperValue >= 2200 && obj.cooperValue < 2399) {
+      else if (distance >= 2200 && distance < 2399) {
         obj.cooperMessage = "Average";
       }
-      if (obj.cooperValue >= 2400 && obj.cooperValue < 2699) {
+      else if (distance >= 2400 && distance < 2699) {
         obj.cooperMessage = "Above Average";
       }
-      if (obj.cooperValue >= 2700) {
+      else {
         obj.cooperMessage = "Excellent";
       }
     }
     if(obj.age === 15 || obj.age === 16){
-      if (obj.cooperValue < 2200) {
+      if (distance < 2200) {
         obj.cooperMessage = "Poor";
       }
-      if (obj.cooperValue >= 2200 && obj.cooperValue < 2299) {
+      if (distance >= 2200 && distance < 2299) {
         obj.cooperMessage = "Below Average";
       }
-      if (obj.cooperValue >= 2300 && obj.cooperValue < 2499) {
+      if (distance >= 2300 && distance < 2499) {
         obj.cooperMessage = "Average";
       }
-      if (obj.cooperValue >= 2500 && obj.cooperValue < 2799) {
+      if (distance >= 2500 && distance < 2799) {
         obj.cooperMessage = "Above Average";
       }
-      if (obj.cooperValue >= 2800) {
+      if (distance >= 2800) {
         obj.cooperMessage = "Excellent";
       }
     }
     if(obj.age >=17 || obj.age <=19){
-      if (obj.cooperValue < 2300) {
+      if (distance < 2300) {
         obj.cooperMessage = "Poor";
       }
-      if (obj.cooperValue >= 2300 && obj.cooperValue < 2499) {
+      if (distance >= 2300 && distance < 2499) {
         obj.cooperMessage = "Below Average";
       }
-      if (obj.cooperValue >= 2500 && obj.cooperValue < 2699) {
+      if (distance >= 2500 && distance < 2699) {
         obj.cooperMessage = "Average";
       }
-      if (obj.cooperValue >= 2700 && obj.cooperValue < 2999) {
+      if (distance >= 2700 && distance < 2999) {
         obj.cooperMessage = "Above Average";
       }
-      if (obj.cooperValue >= 3000) {
+      if (distance >= 3000) {
         obj.cooperMessage = "Excellent";
       }
     }
     if(obj.age >=20 || obj.age <=29){
-      if (obj.cooperValue < 1600) {
+      if (distance < 1600) {
         obj.cooperMessage = "Poor";
       }
-      if (obj.cooperValue >= 1600 && obj.cooperValue < 2199) {
+      if (distance >= 1600 && distance < 2199) {
         obj.cooperMessage = "Below Average";
       }
-      if (obj.cooperValue >= 2200 && obj.cooperValue < 2399) {
+      if (distance >= 2200 && distance < 2399) {
         obj.cooperMessage = "Average";
       }
-      if (obj.cooperValue >= 2400 && obj.cooperValue < 2799) {
+      if (distance >= 2400 && distance < 2799) {
         obj.cooperMessage = "Above Average";
       }
-      if (obj.cooperValue >= 2800) {
+      if (distance >= 2800) {
         obj.cooperMessage = "Excellent";
       }
     }
     if(obj.age >=30 || obj.age <=39){
-      if (obj.cooperValue < 1500) {
+      if (distance < 1500) {
         obj.cooperMessage = "Poor";
       }
-      if (obj.cooperValue >= 1500 && obj.cooperValue < 1999) {
+      if (distance >= 1500 && distance < 1999) {
         obj.cooperMessage = "Below Average";
       }
-      if (obj.cooperValue >= 2000 && obj.cooperValue < 2299) {
+      if (distance >= 2000 && distance < 2299) {
         obj.cooperMessage = "Average";
       }
-      if (obj.cooperValue >= 2300 && obj.cooperValue < 2699) {
+      if (distance >= 2300 && distance < 2699) {
         obj.cooperMessage = "Above Average";
       }
-      if (obj.cooperValue >= 2700) {
+      if (distance >= 2700) {
         obj.cooperMessage = "Excellent";
       }
     }
     if(obj.age >=40 || obj.age <=49){
-      if (obj.cooperValue < 1400) {
+      if (distance < 1400) {
         obj.cooperMessage = "Poor";
       }
-      if (obj.cooperValue >= 1400 && obj.cooperValue < 1699) {
+      if (distance >= 1400 && distance < 1699) {
         obj.cooperMessage = "Below Average";
       }
-      if (obj.cooperValue >= 1700 && obj.cooperValue < 2099) {
+      if (distance >= 1700 && distance < 2099) {
         obj.cooperMessage = "Average";
       }
-      if (obj.cooperValue >= 2100 && obj.cooperValue < 2499) {
+      if (distance >= 2100 && distance < 2499) {
         obj.cooperMessage = "Above Average";
       }
-      if (obj.cooperValue >= 2500) {
+      if (distance >= 2500) {
         obj.cooperMessage = "Excellent";
       }
     }
     if(obj.age > 50){
-      if (obj.cooperValue < 1300) {
+      if (distance < 1300) {
         obj.cooperMessage = "Poor";
       }
-      if (obj.cooperValue >= 1300 && obj.cooperValue < 1599) {
+      if (distance >= 1300 && distance < 1599) {
         obj.cooperMessage = "Below Average";
       }
-      if (obj.cooperValue >= 1600 && obj.cooperValue < 1999) {
+      if (distance >= 1600 && distance < 1999) {
         obj.cooperMessage = "Average";
       }
-      if (obj.cooperValue >= 2000 && obj.cooperValue < 2399) {
+      if (distance >= 2000 && distance < 2399) {
         obj.cooperMessage = "Above Average";
       }
-      if (obj.cooperValue >= 2400) {
+      if (distance >= 2400) {
         obj.cooperMessage = "Excellent";
       }
     }
   }
   if(obj.gender === 'female'){
     if(obj.age === 13 || obj.age === 14){
-      if (obj.cooperValue < 1500) {
+      if (distance < 1500) {
         obj.cooperMessage = "Poor";
       }
-      if (obj.cooperValue >= 1500 && obj.cooperValue < 1599) {
+      if (distance >= 1500 && distance < 1599) {
         obj.cooperMessage = "Below Average";
       }
-      if (obj.cooperValue >= 1600 && obj.cooperValue < 1899) {
+      if (distance >= 1600 && distance < 1899) {
         obj.cooperMessage = "Average";
       }
-      if (obj.cooperValue >= 1900 && obj.cooperValue < 1999) {
+      if (distance >= 1900 && distance < 1999) {
         obj.cooperMessage = "Above Average";
       }
-      if (obj.cooperValue >= 2000) {
+      if (distance >= 2000) {
         obj.cooperMessage = "Excellent";
       }
     }
     if(obj.age === 15 || obj.age === 16){
-      if (obj.cooperValue < 1600) {
+      if (distance < 1600) {
         obj.cooperMessage = "Poor";
       }
-      if (obj.cooperValue >= 1600 && obj.cooperValue < 1699) {
+      if (distance >= 1600 && distance < 1699) {
         obj.cooperMessage = "Below Average";
       }
-      if (obj.cooperValue >= 1700 && obj.cooperValue < 1999) {
+      if (distance >= 1700 && distance < 1999) {
         obj.cooperMessage = "Average";
       }
-      if (obj.cooperValue >= 2000 && obj.cooperValue < 2099) {
+      if (distance >= 2000 && distance < 2099) {
         obj.cooperMessage = "Above Average";
       }
-      if (obj.cooperValue >= 2100) {
+      if (distance >= 2100) {
         obj.cooperMessage = "Excellent";
       }
     }
     if(obj.age >=17 || obj.age <=19){
-      if (obj.cooperValue < 1700) {
+      if (distance < 1700) {
         obj.cooperMessage = "Poor";
       }
-      if (obj.cooperValue >= 1700 && obj.cooperValue < 1799) {
+      if (distance >= 1700 && distance < 1799) {
         obj.cooperMessage = "Below Average";
       }
-      if (obj.cooperValue >= 1800 && obj.cooperValue < 2099) {
+      if (distance >= 1800 && distance < 2099) {
         obj.cooperMessage = "Average";
       }
-      if (obj.cooperValue >= 2100 && obj.cooperValue < 2299) {
+      if (distance >= 2100 && distance < 2299) {
         obj.cooperMessage = "Above Average";
       }
-      if (obj.cooperValue >= 2300) {
+      if (distance >= 2300) {
         obj.cooperMessage = "Excellent";
       }
     }
     if(obj.age >=20 || obj.age <=29){
-      if (obj.cooperValue < 1500) {
+      if (distance < 1500) {
         obj.cooperMessage = "Poor";
       }
-      if (obj.cooperValue >= 1500 && obj.cooperValue < 1799) {
+      if (distance >= 1500 && distance < 1799) {
         obj.cooperMessage = "Below Average";
       }
-      if (obj.cooperValue >= 1800 && obj.cooperValue < 2199) {
+      if (distance >= 1800 && distance < 2199) {
         obj.cooperMessage = "Average";
       }
-      if (obj.cooperValue >= 2200 && obj.cooperValue < 2700) {
+      if (distance >= 2200 && distance < 2700) {
         obj.cooperMessage = "Above Average";
       }
-      if (obj.cooperValue >= 2700) {
+      if (distance >= 2700) {
         obj.cooperMessage = "Excellent";
       }
     }
     if(obj.age >=30 || obj.age <=39){
-      if (obj.cooperValue < 1400) {
+      if (distance < 1400) {
         obj.cooperMessage = "Poor";
       }
-      if (obj.cooperValue >= 1400 && obj.cooperValue < 1699) {
+      if (distance >= 1400 && distance < 1699) {
         obj.cooperMessage = "Below Average";
       }
-      if (obj.cooperValue >= 1700 && obj.cooperValue < 1999) {
+      if (distance >= 1700 && distance < 1999) {
         obj.cooperMessage = "Average";
       }
-      if (obj.cooperValue >= 2000 && obj.cooperValue < 2499) {
+      if (distance >= 2000 && distance < 2499) {
         obj.cooperMessage = "Above Average";
       }
-      if (obj.cooperValue >= 2500) {
+      if (distance >= 2500) {
         obj.cooperMessage = "Excellent";
       }
     }
     if(obj.age >=40 || obj.age <=49){
-      if (obj.cooperValue < 1200) {
+      if (distance < 1200) {
         obj.cooperMessage = "Poor";
       }
-      if (obj.cooperValue >= 1200 && obj.cooperValue < 1499) {
+      if (distance >= 1200 && distance < 1499) {
         obj.cooperMessage = "Below Average";
       }
-      if (obj.cooperValue >= 1500 && obj.cooperValue < 1899) {
+      if (distance >= 1500 && distance < 1899) {
         obj.cooperMessage = "Average";
       }
-      if (obj.cooperValue >= 1900 && obj.cooperValue < 2299) {
+      if (distance >= 1900 && distance < 2299) {
         obj.cooperMessage = "Above Average";
       }
-      if (obj.cooperValue >= 2300) {
+      if (distance >= 2300) {
         obj.cooperMessage = "Excellent";
       }
     }
     if(obj.age > 50){
-      if (obj.cooperValue < 1100) {
+      if (distance < 1100) {
         obj.cooperMessage = "Poor";
       }
-      if (obj.cooperValue >= 1100 && obj.cooperValue < 1399) {
+      if (distance >= 1100 && distance < 1399) {
         obj.cooperMessage = "Below Average";
       }
-      if (obj.cooperValue >= 1400 && obj.cooperValue < 1699) {
+      if (distance >= 1400 && distance < 1699) {
         obj.cooperMessage = "Average";
       }
-      if (obj.cooperValue >= 1700 && obj.cooperValue < 2199) {
+      if (distance >= 1700 && distance < 2199) {
         obj.cooperMessage = "Above Average";
       }
-      if (obj.cooperValue >= 2200) {
+      if (distance >= 2200) {
         obj.cooperMessage = "Excellent";
       }
     }
   }
+  return obj.gender;
 }
